@@ -102,6 +102,49 @@ app.layout = html.Div(
             html.Br(),
 	        html.Div([
             html.Div([
+            html.H6('Source of Data:',style = {'fontWeight':'bold'}),
+            html.Br(),
+            html.P([html.Span("The data in this report is primarily sourced from United Nations’ databases namely "),html.A('https://population.un.org/wpp/',href = 'https://population.un.org/wpp/'),html.Span(' ; '),html.A('https://data.un.org/Search.aspx?q=population',href='https://data.un.org/Search.aspx?q=population'),html.Span(" and various topic related news, reports and analysis available on open sources.")]),
+            ],style = {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'},),
+            html.Br(),
+            html.Div([
+            html.H6('How to Use Live Graphs:',style = {'fontWeight':'bold'}),
+            html.Br(),
+            html.Ul('* Click on Group Type and choose a group given in the dropdown list.'),
+            html.Ul('* Once a group is selected, click on Country/Region to choose a country or region.'),
+            html.Ul("* Last list is of Start Year for the graph, you may choose a year to see the trend along with target data or just the target data."),
+            ],style =  {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'}),
+            html.Br(),
+            html.Div([
+            html.H6('Assumptions:',style = {'fontWeight':'bold'}),
+            html.Br(),
+            html.P('We have made following assumptions for calculating the target population and fertility rate:'),
+            html.Br(),
+            html.Ul('* There is an understanding that we are three (3) times more than the required population on this planet. Therefore, we have taken this assumption as a base for our calculation purposes. '),
+            html.Ul('* The population density of all the countries is considered to be constant across all regions for our calculations.'),
+            html.Ul("* The population decrease year wise is based on exponential decrease. The exponential factor is calculated for each region and scenario keeping targeted years’ intervals as: 5,10,15,20,25 years hence."),
+            html.Ul('* The death rate calculation for future years (2020-2045) is based on the medium variant of CRUDE_DEATH_RATE.'),
+            html.Ul('* The population line in our graph has the estimated population year wise (1950 to 2020) from the TOTAL_POPULATION data and the future years are based on the medium variant prediction of population for the specific region.'),
+            html.Ul('* The ratio of fertile female (Mother) population to total population is assumed to be constant across all the future years. This may be debatable as future fertility plays a major role. However, due to lack of required data, we have to work around with this fixed ratio.'),
+            html.Ul('* The data is calculated for 251 regions while there was insufficient data for 34 regions which accounts for 1.13M population so not much impacting overall target numbers.')
+            ],id = 'assumption',style =  {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'}),
+            html.Br(),
+            html.Div([
+            html.H6('Disclaimer:',style = {'fontWeight':'bold'}),
+            html.Br(),
+            html.Ul('* This report is an attempt to give a targeted direction for desired population for each country. Many data sets for our study are not available to us. Therefore, projected data may vary hugely from actual future population.'),
+            html.Ul('* We have made many assumptions for our calculations. If reader(s) of this report has access to better and more reliable assumptions and data sets, we are open to revise our calculations.'),
+            html.Ul("* The purpose of this report is to initiate a direction driven approach for managing future population. The calculations are ball park figures. Therefore, readers of this report are requested to use their own judgement while using this data. We do not take any responsibility of an impact (positive or negative) on anyone using our report for current or future plans.")
+            ],id = 'disclaimer',style =  {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'}),
+            html.Br(),
+            html.Div([
+            html.H6('Appeal To Users:',style = {'fontWeight':'bold'}),
+            html.Br(),
+            html.P(['Here is an appeal by Mr. David Attenborough  to save our plant in many ways ',html.A('Click here', href='https://www.youtube.com/watch?v=a8hhAfSPBq8')]),
+            html.P([html.Span("It is recommended for everyone to watch "),html.Strong('A Life On Our Planet'),html.Span(" available on Netflix and YouTube, a movie on humanity's impact on nature and a message of hope for future generations.")]),
+            ],style = {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'},),
+            html.Br(),
+            html.Div([
             html.H6('About Authors:',style = {'fontWeight':'bold'}),
             html.P('The authors of this report are:'),
             html.Br(),
@@ -114,34 +157,6 @@ app.layout = html.Div(
             html.P([html.Span('About Ramendra Singla:',style = {'font-style':'italic'}),html.Span(' Ramendra is a final year student pursuing his B.Tech in Computer Science from IP University, Delhi. He has completed multiple internships in the field of Data Science from S&P Global Market Intelligence and finalist in Smart India Hackathon 2019, specializing in data analysis, machine learning and python development. He is an asset to any project involving data science and data analysis.')]),
             html.A('https://www.linkedin.com/in/ramendrasingla/',href = 'https://www.linkedin.com/in/ramendrasingla/')
             ],style =  {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'}),
-            html.Br(),
-            html.Div([
-            html.H6('Appeal To Users:',style = {'fontWeight':'bold'}),
-            html.Br(),
-            html.P(['Here is an appeal by Mr. David Attenborough  to save our plant in many ways ',html.A('Click here', href='https://www.youtube.com/watch?v=a8hhAfSPBq8')]),
-            html.P("It is recommended for everyone to watch “A Life On Our Planet” available on Netflix and YouTube, a movie on humanity's impact on nature and a message of hope for future generations."),
-            ],style = {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'},),
-            html.Br(),
-            html.Div([
-            html.H6('Assumptions:',style = {'fontWeight':'bold'}),
-            html.Br(),
-            html.P('We have made following assumptions for calculating the target population and fertility rate:'),
-            html.Br(),
-            html.Ul('* There is an understanding that we are three (3) times more than the required population on this planet. Therefore, we have taken this assumption as a base for our calculation purposes. '),
-            html.Ul('* The population density of all the countries is considered to be constant across all regions for our calculations.'),
-            html.Ul("* The population decrease year wise is based on exponential decrease. The exponential factor is calculated for each region and scenario keeping targeted years’ intervals as: 5,10,15,20,25 years hence."),
-            html.Ul('* The death rate calculation for future years (2020-2045) is based on the medium variant of CRUDE_DEATH_RATE.'),
-            html.Ul('* The ratio of fertile female (Mother) population to total population is assumed to be constant across all the future years. This may be debatable as future fertility plays a major role. However, due to lack of required data, we have to work around with this fixed ratio.'),
-            html.Ul('* The data is calculated for 251 regions while there was insufficient data for 34 regions which accounts for 1.13M population so not much impacting overall target numbers.')
-            ],id = 'assumption',style =  {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'}),
-            html.Br(),
-            html.Div([
-            html.H6('Disclaimer:',style = {'fontWeight':'bold'}),
-            html.Br(),
-            html.Ul('* This report is an attempt to give a targeted direction for desired population for each country. Many data sets for our study are not available to us. Therefore, projected data may vary hugely from actual future population.'),
-            html.Ul('* We have made many assumptions for our calculations. If reader(s) of this report has access to better and more reliable assumptions and data sets, we are open to revise our calculations.'),
-            html.Ul("* The purpose of this report is to initiate a direction driven approach for managing future population. The calculations are ball park figures. Therefore, readers of this report are requested to use their own judgement while using this data. We do not take any responsibility of an impact (positive or negative) on anyone using our report for current or future plans.")
-            ],id = 'disclaimer',style =  {'backgroundColor':'#CEFFC9','margin': 'auto','width':'80%','padding':'10px'}),
             html.Br(),
             html.Div([
             html.H6('Contact Us:',style = {'fontWeight':'bold'}),
@@ -216,7 +231,6 @@ def toggle_container(n_clicks,type,reg,yr):
         t_15 = target_15[target_15['Region, subregion, country or area *']==reg][['Current Population']+sorted([col for col in target_15.columns if col.startswith('Target_Pop_')])].values[0]
         t_20 = target_20[target_20['Region, subregion, country or area *']==reg][['Current Population']+sorted([col for col in target_20.columns if col.startswith('Target_Pop_')])].values[0]
         t_25 = target_25[target_25['Region, subregion, country or area *']==reg][['Current Population']+sorted([col for col in target_25.columns if col.startswith('Target_Pop_')])].values[0]
-        print(pop_out)
         output = dcc.Graph(id='population_graph',
         figure={
             'data': [
