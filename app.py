@@ -8,12 +8,12 @@ import os
 from dash.dependencies import Input, Output, State
 
 
-server = Flask(__name__)
+app = Flask(__name__)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(name='Grass_Foundation',
-                server=server,external_stylesheets=external_stylesheets)
+                server=app,external_stylesheets=external_stylesheets)
 server = app.server
 #app.config.supress_callback_exceptions = True
 prefix = ''
