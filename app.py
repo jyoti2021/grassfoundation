@@ -41,11 +41,8 @@ target_25 = pd.read_excel(open('.//files//'+'Target_25_Population.xlsx', 'rb'),s
 
 app.layout = html.Div(
     [
-        # html.Div([
-        # html.Img(src=app.get_asset_url('Logo.jpeg'),style = {'display': "inline-block",'justifyContent':'right','width':'30%','height':'5%'})],style = dict(display='flex', justifyContent='center')),
-        html.H1('GRASS FOUNDATION',style={'textAlign': 'center', 'color':'#77dd77', 'margin':'auto','fontSize':'5em'}),
-        html.Br(),
-        html.Br(),
+        html.Div([
+        html.Img(src=app.get_asset_url('Logo2.jpg'),style = {'display': "inline-block",'justifyContent':'right','width':'40em','height':'5%'})],style = dict(display='flex', justifyContent='center')),
         html.H3('World’s Population – Tragedy to Target',style={'textAlign': 'center', 'color':'rgb(0,0,0)', 'margin':'auto','fontSize':'2em'}),
         html.Br(),
         html.H4('What is needed?',style={'textAlign': 'center', 'color':'rgb(0,0,0)', 'margin':'auto','fontSize':'1.5em'}),
