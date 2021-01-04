@@ -1,0 +1,11 @@
+numpy==1.19.4
+pandas==1.2.0
+dash==1.18.1
+Flask>=1.1.1
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+Werkzeug==0.15.5
+xlrd>=1.0.0
+openpyxl==3.0.5
