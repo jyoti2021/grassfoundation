@@ -10,7 +10,7 @@ from dash.dependencies import Input, Output, State
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(name='Grass_Foundation',external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__,external_stylesheets=external_stylesheets)
 server = app.server
 #app.config.supress_callback_exceptions = True
 prefix = ''
@@ -31,12 +31,12 @@ logoStyle = {'height': '10%','width': '10%','margin':'auto','display':'inline-bl
 headingStyle = {'textAlign': 'center', 'color':'rgb(214,0,42)', 'margin':'auto' }
 headingStyle2 = {'textAlign': 'center', 'color':'rgb(0,0,0)', 'margin':'auto','font-style': 'italic'}
 
-population = pd.read_excel(open('.//files//'+'Population.xlsx', 'rb'),sheet_name='Sheet1')
-target_5 = pd.read_excel(open('.//files//'+'Target_5_Population.xlsx', 'rb'),sheet_name='Sheet1')
-target_10 = pd.read_excel(open('.//files//'+'Target_10_Population.xlsx', 'rb'),sheet_name='Sheet1')
-target_15 = pd.read_excel(open('.//files//'+'Target_15_Population.xlsx', 'rb'),sheet_name='Sheet1')
-target_20 = pd.read_excel(open('.//files//'+'Target_20_Population.xlsx', 'rb'),sheet_name='Sheet1')
-target_25 = pd.read_excel(open('.//files//'+'Target_25_Population.xlsx', 'rb'),sheet_name='Sheet1')
+population = pd.read_excel(open('.//files//'+'Population.xlsx', 'rb'),sheet_name='Sheet1',engine='openpyxl')
+target_5 = pd.read_excel(open('.//files//'+'Target_5_Population.xlsx', 'rb'),sheet_name='Sheet1',engine='openpyxl')
+target_10 = pd.read_excel(open('.//files//'+'Target_10_Population.xlsx', 'rb'),sheet_name='Sheet1',engine='openpyxl')
+target_15 = pd.read_excel(open('.//files//'+'Target_15_Population.xlsx', 'rb'),sheet_name='Sheet1',engine='openpyxl')
+target_20 = pd.read_excel(open('.//files//'+'Target_20_Population.xlsx', 'rb'),sheet_name='Sheet1',engine='openpyxl')
+target_25 = pd.read_excel(open('.//files//'+'Target_25_Population.xlsx', 'rb'),sheet_name='Sheet1',engine='openpyxl')
 
 
 app.layout = html.Div(
