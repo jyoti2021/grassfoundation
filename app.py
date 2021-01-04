@@ -28,7 +28,7 @@ app.config.update({
 
 textBoxStyle = {"height": "auto", "margin-bottom": "auto",'fontWeight':'bold','fontSize':'0.9rem','text-align':'auto'}
 logoStyle = {'height': '10%','width': '10%','margin':'auto','display':'inline-block'}
-headingStyle = {'textAlign': 'center', 'color':'rgb(214,0,42)', 'margin':'auto' }
+headingStyle = {'textAlign': 'center', 'color':'rgb(0,0,0)', 'margin':'auto' }
 headingStyle2 = {'textAlign': 'center', 'color':'rgb(0,0,0)', 'margin':'auto','font-style': 'italic'}
 
 population = pd.read_excel(open('.//files//'+'Population.xlsx', 'rb'),sheet_name='Sheet1',engine='openpyxl')
@@ -41,10 +41,14 @@ target_25 = pd.read_excel(open('.//files//'+'Target_25_Population.xlsx', 'rb'),s
 
 app.layout = html.Div(
     [
-        html.Div([html.Img(src=app.get_asset_url('Logo.jpeg'),style = {'display': "inline-block",'justifyContent':'center','width':'30%','height':'5%'})],style = dict(display='flex', justifyContent='center')),
-        html.H3('World’s Population – Tragedy to Target',style=headingStyle2),
+        # html.Div([
+        # html.Img(src=app.get_asset_url('Logo.jpeg'),style = {'display': "inline-block",'justifyContent':'right','width':'30%','height':'5%'})],style = dict(display='flex', justifyContent='center')),
+        html.H1('GRASS FOUNDATION',style={'textAlign': 'center', 'color':'#77dd77', 'margin':'auto','fontSize':'5em'}),
         html.Br(),
-        html.H4('What is needed?',style=headingStyle2),
+        html.Br(),
+        html.H3('World’s Population – Tragedy to Target',style={'textAlign': 'center', 'color':'rgb(0,0,0)', 'margin':'auto','fontSize':'2em'}),
+        html.Br(),
+        html.H4('What is needed?',style={'textAlign': 'center', 'color':'rgb(0,0,0)', 'margin':'auto','fontSize':'1.5em'}),
         html.Br(),
         html.Div([
         html.P('If you are told that you are holding a ticking bomb, what would be your first reaction? You will just throw it impulsively because you don’t know what to do with it. And if you are told that there is a green button to stop it. You will press that button immediately. This is exactly the situation with world’s population. It is a ticking bomb with a green button because we know what is needed here. Irony is we are moving aimlessly because we are not realizing that we are holding a ticking bomb or we don’t even know what to do and which direction to take.'),
@@ -86,14 +90,14 @@ app.layout = html.Div(
             ],style = dict(display='flex', justifyContent='center')),
             html.Br(),
             html.Div([html.Button('Submit', style={"height": "auto", "margin-bottom": "auto",
-              'font-weight': 'bold','backgroundColor':'#CEFFC9','color':'black','border':'black solid'},
+              'font-weight': 'bold','backgroundColor':'#CEFFC9','color':'black','border':'black solid','fontSize':'1em'},
 	                              id='button'), ],style=dict(display='flex', justifyContent='center')),
             html.Br(),
 	        html.Div(id="prediction-out", style={'margin':'auto','width':'80%'}),
             html.Br(),
             html.Br(),
             html.Div([html.Button('Additional Information', style={"height": "auto", "margin-bottom": "auto",
-              'font-weight': 'bold','backgroundColor':'#CEFFC9','color':'black','border':'black solid'},
+              'font-weight': 'bold','backgroundColor':'#CEFFC9','color':'black','border':'black solid','fontSize':'1em'},
 	                              id='add-button'), ],style=dict(display='flex', justifyContent='left')),
 
             html.Br(),
