@@ -202,7 +202,7 @@ def display(n_clicks):
 def pred(out):
     if out is not None and out!=[]:
         var = population[population['Type']==out]['Region, subregion, country or area *'].unique()
-        return [{'label':ix.strip().upper() , 'value':ix.strip()} for ix in var]
+        return [{'label':ix.strip().upper() , 'value':ix.strip()} for ix in sorted(var)]
     else:
         return []
 
